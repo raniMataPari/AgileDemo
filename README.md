@@ -1,2 +1,2 @@
 # AgileDemo
-This is a demo of Agile development
+This is a demo of Agile development.
