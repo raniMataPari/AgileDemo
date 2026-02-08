@@ -4,18 +4,29 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                echo 'Checkout from Jenkinsfile'
+                echo 'Code checkout completed'
             }
         }
+
         stage('Build') {
             steps {
-                echo 'Build from Jenkinsfile'
+                bat 'javac Hello.java'
             }
         }
+
         stage('Test') {
             steps {
-                echo 'Test from Jenkinsfile'
+                bat 'java Hello'
             }
+        }
+    }
+
+    post {
+        success {
+            echo 'Mini CI Project build SUCCESS'
+        }
+        failure {
+            echo 'Mini CI Project build FAILED'
         }
     }
 }
